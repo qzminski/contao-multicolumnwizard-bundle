@@ -45,7 +45,7 @@ $GLOBALS['TL_HOOKS']['executePostActions'][] = array(
     'handleRowCreation'
 );
 
-if (TL_MODE == 'BE') {
+if (defined('TL_MODE') && TL_MODE == 'BE') {
     $GLOBALS['TL_HOOKS']['parseTemplate'][] = array(
         'MenAtWork\MultiColumnWizardBundle\EventListener\Contao\ParseTemplate',
         'addVersion'
